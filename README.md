@@ -1,16 +1,12 @@
-## Hi there 👋
+Bienvenido a leosoplapuco
+👋 ¡Hola! Somos leosoplapuco, una pequeña agencia de diseño y desarrollo web dedicada a crear experiencias digitales únicas y personalizadas. Con un enfoque en la innovación y la calidad, trabajamos para llevar tus ideas a la vida a través de un diseño atractivo y un desarrollo robusto.
 
-<!--
-**leosoplapuco/leosoplapuco** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+¿Qué hacemos?
+Diseño Web: Creamos interfaces amigables y atractivas que conectan con tu audiencia.
+Desarrollo Web: Desarrollamos aplicaciones y sitios web funcionales, optimizados y adaptables a tus necesidades.
+Soluciones Personalizadas: Nos enfocamos en ofrecer soluciones a medida, ajustadas a los objetivos de cada cliente.
+Nuestra Filosofía
+En Leosoplapuco, creemos que cada proyecto es una oportunidad para aprender y crecer. Trabajamos de la mano contigo para entender tus necesidades y traducirlas en un producto final que supere tus expectativas.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Colaboraciones y Proyectos
+Estamos siempre abiertos a colaborar en nuevos proyectos, así que si tienes una idea en mente, ¡no dudes en contactarnos! Echa un vistazo a nuestros repositorios para ver algunos de nuestros trabajos y contribuciones.
