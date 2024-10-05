@@ -1,6 +1,8 @@
 Bienvenido a leosoplapuco
 👋 ¡Hola! Somos leosoplapuco, una pequeña agencia de diseño y desarrollo web dedicada a crear experiencias digitales únicas y personalizadas. Con un enfoque en la innovación y la calidad, trabajamos para llevar tus ideas a la vida a través de un diseño atractivo y un desarrollo robusto.
 
+* Mi perfil personal es https://github.com/leonardosoplapuco
+
 ¿Qué hacemos?
 Diseño Web: Creamos interfaces amigables y atractivas que conectan con tu audiencia.
 Desarrollo Web: Desarrollamos aplicaciones y sitios web funcionales, optimizados y adaptables a tus necesidades.
