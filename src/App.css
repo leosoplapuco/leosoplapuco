@@ -1,4 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
+    font-family: 'Google sans', sans-serif;
+    font-weight: 400;
+}
+
+:root{
+    --body: #212121;
+    --text: snow;
+}
+
+body{
+    background: var(--body);
+    color: var(--text);
 }
