@@ -3,17 +3,152 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'Google sans', sans-serif;
     font-weight: 400;
+    list-style: none;
+    text-decoration: none;
 }
 
 :root{
     --body: #212121;
     --text: snow;
+
+    --white: #FFFFFF;
+
+    --black: #000000;
+    --black-1: #111111;
+    --black-2: #222222;
+    --black-3: #333333;
+    --black-4: #444444;
+
+    --t-200ms-linear: all 200ms linear;
 }
 
 body{
     background: var(--body);
     color: var(--text);
+}
+
+.d-flex{
+    display: flex;
+}
+
+.d-flex-center-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gap-10{
+    gap: 10px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.button-link{
+    width: auto;
+    padding: 0 10px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    gap: 10px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.button-link::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: flex;
+    width: 80px;
+    aspect-ratio: 1/1;
+    transition: var(--t-200ms-linear);
+    border-radius: 100%;
+    scale: 0;
+    z-index: 0;
+
+    opacity: 0.8;
+}
+
+.button-link:hover::before{
+    scale: 2;
+    opacity: 1;
+}
+
+.button-link .button-link-text{
+    font-weight: bold;
+}
+
+.button-link .button-link-text,
+.button-link span{
+    transition: var(--t-200ms-linear);
+    z-index: 1;
+}
+
+.button-link-1{
+    border: 1px solid var(--white);
+}
+
+.button-link-1 .button-link-text,
+.button-link-1 span{
+    color: var(--white);
+}
+
+.button-link-1:hover .button-link-text,
+.button-link-1:hover span{
+    color: var(--black);
+}
+
+.button-link-1::before{
+    background: var(--white);
+}
+
+.button-link-2{
+    border: 1px solid var(--white);
+    background: var(--white);
+}
+
+/* .button-link-2 .button-link-text{
+    font-weight: bold;
+} */
+
+.button-link-2 .button-link-text,
+.button-link-2 span{
+    color: var(--black);
+}
+
+.button-link-2:hover .button-link-text,
+.button-link-2:hover span{
+    color: var(--white);
+}
+
+.button-link-2::before{
+    background: var(--black);
+}
+
+.button-link-3 .button-link-text,
+.button-link-3 span{
+    color: var(--white);
+}
+
+.button-link-3:hover .button-link-text,
+.button-link-3:hover span{
+    color: var(--black);
+}
+
+.button-link-3::before{
+    background: var(--white);
+}
+
+.text-center{
+    text-align: center;
 }
