@@ -5,14 +5,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Google sans', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     list-style: none;
     text-decoration: none;
+    font-size: 15px;
 }
 
 :root{
-    --body: #212121;
-    --text: snow;
+    --body: snow;
+    --text: #212121;
 
     --white: #FFFFFF;
 
@@ -22,12 +23,26 @@
     --black-3: #333333;
     --black-4: #444444;
 
+    --component: #939393;
+
+    --mx-w-content: 1440px;
+
     --t-200ms-linear: all 200ms linear;
 }
 
 body{
     background: var(--body);
     color: var(--text);
+}
+
+body.theme-gray{
+    --body: #707070;
+    --text: snow;
+}
+
+body.theme-dark{
+    --body: #212121;
+    --text: snow;
 }
 
 .d-flex{
