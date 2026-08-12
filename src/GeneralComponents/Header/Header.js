@@ -175,7 +175,7 @@ function Header() {
                         <span className='theme-button-tag theme-button-light' title='Tema claro'></span>
                         <span className='theme-button-tag theme-button-gray' title='Tema gris'></span>
                         <span className='theme-button-tag theme-button-dark' title='Tema oscuro'></span>
-                        <span className='theme-button-indicator'></span>
+                        {/* <span className='theme-button-indicator'></span> */}
                     </div>
                 </div>
             </div>
