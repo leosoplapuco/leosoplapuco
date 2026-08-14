@@ -63,6 +63,13 @@ body.theme-dark{
     margin-top: 20px;
 }
 
+button{
+    background: none;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+}
+
 .button-link{
     width: auto;
     padding: 0 10px;
@@ -166,4 +173,24 @@ body.theme-dark{
 
 .text-center{
     text-align: center;
+}
+
+.text-black-to-white{
+    color: #000;
+}
+
+body.theme-dark .text-black-to-white{
+    color: #FFF;
+}
+
+.text-white-to-black{
+    color: #FFF;
+}
+
+body.theme-dark .text-white-to-black{
+    color: #000;
+}
+
+.margin-bottom-20{
+    margin-bottom: 20px;
 }
