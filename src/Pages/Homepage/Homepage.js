@@ -1,4 +1,3 @@
-import Header from '../../GeneralComponents/Header/Header';
 import Hero from './Components/Hero/Hero';
 
 import './Homepage.css';
@@ -6,8 +5,9 @@ import './Homepage.css';
 function Homepage(){
     return(
         <>
-            <Header/>
             <Hero/>
+
+            <p>leosoplapuco</p>
         </>
     )
 }

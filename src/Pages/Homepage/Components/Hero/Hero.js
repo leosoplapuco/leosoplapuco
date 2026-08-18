@@ -39,7 +39,7 @@ function Hero(){
                             </a>
                         </li>
                         <li>
-                            <a href='t.me/leosoplapuco' title='leosoplapuco | Telegram'>
+                            <a href='https://t.me/leosoplapuco' title='leosoplapuco | Telegram'>
                                 <i class="fa-brands fa-telegram"></i>
                             </a>
                         </li>
