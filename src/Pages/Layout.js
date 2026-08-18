@@ -6,7 +6,7 @@ import Header from '../GeneralComponents/Header/Header';
 const Layout = ({ children, title = 'Mi Sitio Web' }) => {
     return(
         <>
-            <Cursor/>
+            <Cursor offsetX={20} offsetY={20} size={20} color="#007bff" followSpeed={0.1} circleSize={40} />
 
             <Header />
 
