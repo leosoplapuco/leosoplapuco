@@ -55,8 +55,22 @@ body.theme-dark{
     justify-content: center;
 }
 
+.d-flex-center-left{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.gap-5{
+    gap: 5px;
+}
+
 .gap-10{
     gap: 10px;
+}
+
+.gap-20{
+    gap: 20px;
 }
 
 .margin-top-20{

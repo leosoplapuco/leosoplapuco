@@ -1,101 +1,114 @@
-import { useEffect, useState } from 'react';
-
 import './Header.css';
 
-function Header() {
-    const [isDark, setIsDark] = useState(false);
-    const applyTheme = (theme) => {
-        document.body.classList.remove('theme-light', 'theme-dark');
-        
-        if (theme === 'dark') {
-            document.body.classList.add('theme-dark');
-            setIsDark(true);
-        } else {
-            document.body.classList.add('theme-light');
-            setIsDark(false);
-        }
-
-        localStorage.setItem('theme', theme);
-
-        const themeButton = document.querySelector('.theme-button');
-        if (themeButton) {
-            if (theme === 'dark') {
-                themeButton.classList.add('active');
-            } else {
-                themeButton.classList.remove('active');
-            }
-        }
-    };
-
-    const toggleTheme = () => {
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        applyTheme(newTheme);
-    };
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        applyTheme(savedTheme);
-
-        const themeButton = document.querySelector('.theme-button');
-        if (themeButton) {
-            themeButton.addEventListener('click', toggleTheme);
-        }
-
-        return () => {
-            if (themeButton) {
-                themeButton.removeEventListener('click', toggleTheme);
-            }
-        };
-    }, []);
-
-    return (
+function Header(){
+    return(
         <header>
             <div className='header'>
-                <div className='header-left'>
-                    <a href='https://leosoplapuco.com/' title='leosoplapuco | Desarrollador web' className='header-logo'>
-                        <h2 className='header-logo-text'>leosoplapuco</h2>
-                    </a>
+                <a className='header-logo' href='/'>
+                    <p className='header-logo-text'>leosoplapuco</p>
+                </a>
 
+                <ul className='header-center'>
+                    <li>
+                        <button type='button' className='hc-button hc-button-1'>
+                            <h2>Servicios</h2>
+                            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                        </button>
+
+                        <div className='header-center-sub-menu-container'>
+                            <div className='header-center-sub-menu'>
+                                <div className='header-center-sub-menu-tag header-center-sub-menu-tag-1'>
+                                    <div className='d-flex-center-left margin-bottom-20 gap-5'>
+                                        <span class="material-symbols-outlined">code</span>
+                                        <p className='header-center-sub-menu-tag-title'>Web</p>
+                                    </div>
+
+                                    <ul>
+                                        <li>
+                                            <a href='/' className=''>
+                                                <p>Diseño y desarrollo</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='/' className=''>
+                                                <p>SEO</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='/' className=''>
+                                                <p>Tu negocio en Google</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className='header-center-sub-menu-tag header-center-sub-menu-tag-2'>
+                                    <div className='d-flex-center-left margin-bottom-20 gap-5'>
+                                        <span class="material-symbols-outlined">cloud</span>
+                                        <p className='header-center-sub-menu-tag-title'>Cloud</p>
+                                    </div>
+
+                                    <ul>
+                                        <li>
+                                            <a href='/' className=''>
+                                                <p>Hosting y dominio</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='/' className=''>
+                                                <p>VPS</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href='/' className='menu-link menu-link-6'>
+                            <h2>Portafolio</h2>
+                        </a>
+                    </li>
+                </ul>
+
+                <div className='header-right'>
                     <nav className='menu-container'>
                         <ul className='menu'>
                             <li>
-                                <a href='/' title='' className='menu-link menu-link-1'>
+                                <a href='/' className='menu-link menu-link-1'>
                                     <h2>Inicio</h2>
                                 </a>
                             </li>
                             <li>
-                                <a href='/' title='' className='menu-link menu-link-2'>
-                                    <h2>Servicios</h2>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='/' title='' className='menu-link menu-link-3'>
-                                    <h2>Portafolio</h2>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='/' title='' className='menu-link menu-link-4'>
+                                <a href='/' className='menu-link menu-link-2'>
                                     <h2>Sobre mi</h2>
                                 </a>
                             </li>
                             <li>
-                                <a href='/' title='' className='menu-link menu-link-5'>
+                                <a href='/' className='menu-link menu-link-3'>
+                                    <h2>Clientes</h2>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/' className='menu-link menu-link-4'>
+                                    <h2>Soporte técnico</h2>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/' className='menu-link menu-link-5'>
                                     <h2>Contacto</h2>
                                 </a>
                             </li>
                         </ul>
                     </nav>
-                </div>
-                <div className='header-right'>
-                    <button type='button' className='theme-button'>
-                        <span className="material-symbols-outlined">dark_mode</span>
-                        <span className="material-symbols-outlined">light_mode</span>
+
+                    <button type='button' className='menu-button'>
+                        <div className='menu-button-bars'></div>
                     </button>
                 </div>
             </div>
         </header>
-    );
+    )
 }
 
 export default Header;

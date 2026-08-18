@@ -1,0 +1,94 @@
+/* components/CustomCursor.css */
+
+@keyframes clickRipple {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* También puedes agregar un efecto de glow al cursor principal */
+.custom-cursor {
+  transition: transform 0.05s ease-out !important;
+}
+
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 123, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ocultar cursor en elementos interactivos */
+button, a, input, textarea, select {
+  cursor: none !important;
+}
+
+/* components/Cursor.css */
+
+@keyframes clickRipple {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Estilos para el estado hover */
+.custom-cursor.hover {
+  /* Puedes agregar estilos adicionales para hover */
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* Asegurar que el cursor nativo se vea en todos los elementos */
+* {
+  cursor: auto !important;
+}
+
+/* Pero permitir que los elementos interactivos tengan su cursor */
+a, button, input, select, textarea, 
+[role="button"], [role="link"],
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Para elementos que quieras que tengan cursor default */
+.cursor-default {
+  cursor: default !important;
+}
