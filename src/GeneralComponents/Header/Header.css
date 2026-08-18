@@ -40,6 +40,10 @@ header{
     border-radius: 6px;
 
     z-index: 10;
+    
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
 }
 
 .header-center-sub-menu{
@@ -138,6 +142,10 @@ header{
     height: 8px;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     background: var(--black);
+
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
 }
 
 .menu-link h2{
