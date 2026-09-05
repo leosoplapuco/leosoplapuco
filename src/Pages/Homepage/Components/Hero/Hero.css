@@ -1,7 +1,7 @@
 .hero-container{
     width: 100%;
-    height: calc(100vh - 72px);
-    max-height: 600px;
+    height: calc(100vh - 64px);
+    max-height: 800px;
     position: relative;
 }
 

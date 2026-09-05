@@ -1,12 +1,12 @@
-// components/Cursor.jsx (versión corregida)
 import React, { useState, useEffect, useRef } from 'react';
+
 import './Cursor.css';
 
 const Cursor = ({ 
   offsetX = 20, 
   offsetY = 20, 
   size = 20, 
-  color = '#007bff',
+  color = '#222222',
   followSpeed = 0.1,
   circleSize = 40
 }) => {
@@ -71,13 +71,12 @@ const Cursor = ({
 
   return (
     <>
-      {/* Círculo que sigue al cursor - 20px abajo y a la derecha */}
       <div
         ref={cursorRef}
         className="custom-cursor"
         style={{
           position: 'fixed',
-          pointerEvents: 'none', // Esto es clave - permite clicks a través del círculo
+          pointerEvents: 'none',
           zIndex: 9999,
           top: 0,
           left: 0,
@@ -92,14 +91,13 @@ const Cursor = ({
         }}
       />
 
-      {/* Círculo de click - escala 0 a 2 con opacidad 1 a 0 */}
       {clickCircles.map((circle) => (
         <div
           key={circle.id}
           className="click-circle"
           style={{
             position: 'fixed',
-            pointerEvents: 'none', // Esto es clave - permite clicks a través del círculo
+            pointerEvents: 'none',
             zIndex: 9998,
             top: circle.y - circleSize,
             left: circle.x - circleSize,
