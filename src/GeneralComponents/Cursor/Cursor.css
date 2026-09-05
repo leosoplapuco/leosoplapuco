@@ -1,20 +1,15 @@
-/* components/Cursor.css */
 @keyframes clickRipple {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
 }
 
-/* Solo esto es necesario - los círculos NO interfieren con el cursor nativo */
 .custom-cursor,
 .click-circle {
-  pointer-events: none !important;
+    pointer-events: none !important;
 }
-
-/* NO tocar el cursor de ningún elemento - el navegador maneja todo */
-/* Esto asegura que botones, links, etc. tengan sus cursors nativos */

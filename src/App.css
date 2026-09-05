@@ -30,6 +30,10 @@
     --t-200ms-linear: all 200ms linear;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 body{
     background: var(--body);
     color: var(--text);
