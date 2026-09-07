@@ -38,7 +38,7 @@ function Header(){
                                     <ul>
                                         <li>
                                             <a href='/' className=''>
-                                                <p>Diseño y desarrollo</p>
+                                                <p>Diseño y desarrollo web</p>
                                             </a>
                                         </li>
                                         <li>
@@ -137,7 +137,7 @@ function Header(){
                             </li>
                             <li>
                                 <button type='button' className=''>
-                                    <p>Soluciones</p>
+                                    <p>Soluciones web</p>
                                     <span class="material-symbols-outlined">chevron_right</span>
                                 </button>
                             </li>
@@ -166,12 +166,81 @@ function Header(){
                         </ul>
 
                         <div className='header-menu-content-list'>
-                            <ul>
+                            {/* <ul>
                                 <li>
                                     <a href='/' title=''>
                                         <div className='d-flex-center-left gap-5'>
                                             <span class="material-symbols-outlined">code</span>
                                             <p>Desarrollo web</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <span class="material-symbols-outlined">leaderboard</span>
+                                            <p>SEO</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <span class="material-symbols-outlined">videocam</span>
+                                            <p>Asesoría</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <i class="fa-brands fa-google"></i>
+                                            <p>Tu negocio en Google</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+                                </li>
+                            </ul> */}
+
+                            <ul>
+                                <li>
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <span class="material-symbols-outlined">cloud</span>
+                                            <p>Hosting web</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <span class="material-symbols-outlined">language</span>
+                                            <p>Dominio</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <span class="material-symbols-outlined">lock</span>
+                                            <p>Certificación SSL</p>
+                                        </div>
+
+                                        <p>Haz crecer tu negocio dandole un sitio en internet</p>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href='/' title=''>
+                                        <div className='d-flex-center-left gap-5'>
+                                            <span class="material-symbols-outlined">dns</span>
+                                            <p>Servidor VPS</p>
                                         </div>
 
                                         <p>Haz crecer tu negocio dandole un sitio en internet</p>
