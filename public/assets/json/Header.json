@@ -1,0 +1,178 @@
+{
+    "navbar":[
+        {
+            "id": 1,
+            "center":[
+                {
+                    "item": "Servicios",
+                    "lista":[
+                        {
+                            "id": 1,
+                            "titulo": "Web",
+                            "lista":[
+                                {
+                                    "item": "Desarrollo web",
+                                    "link": "/servicios/desarrollo-web/"
+                                },
+                                {
+                                    "item": "Optimización SEO",
+                                    "link": "/servicios/optimizacion-seo/"
+                                },
+                                {
+                                    "item": "Tu negocio en Google",
+                                    "link": "/servicios/tu-negocio-en-google/"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Cloud",
+                            "lista":[
+                                {
+                                    "item": "Hosting y dominio",
+                                    "link": "/servicios/cloud/hosting-y-dominio/"
+                                },
+                                {
+                                    "item": "Servidor VPS",
+                                    "link": "/servicios/cloud/servidor-vps/"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "item": "Portafolio",
+                    "link": "/portafolio/"
+                }
+            ],
+            "nav":[
+                {
+                    "id": 1,
+                    "item": "Inicio",
+                    "item-link": "/"
+                },
+                {
+                    "id": 2,
+                    "item": "Sobre mi",
+                    "item-link": "/sobre-mi/"
+                },
+                {
+                    "id": 3,
+                    "item": "clientes",
+                    "item-link": "/clientes/"
+                },
+                {
+                    "id": 4,
+                    "item": "Soporte técnico",
+                    "item-link": "/soporte/"
+                },
+                {
+                    "id": 5,
+                    "item": "Contacto",
+                    "item-link": "/contacto/"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "menu":[
+                {
+                    "id": 1,
+                    "item": "Inicio",
+                    "link": "/"
+                },
+                {
+                    "id": 2,
+                    "item": "Servicios",
+                    "sub-menu":[
+                        {
+                            "id": 1,
+                            "icon": "",
+                            "item": "Desarrollo web",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "",
+                            "item": "Optimización SEO",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "",
+                            "item": "Asesoría personalizada",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 4,
+                            "icon": "",
+                            "item": "Tu negocio en Google",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "item": "Soluciones web",
+                    "sub-menu":[
+                        {
+                            "id": 1,
+                            "icon": "",
+                            "item": "Hosting web",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "",
+                            "item": "Dominio web",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "",
+                            "item": "Certificación SSL",
+                            "link": "/servicios/cloud/hosting-web/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "item": "Portafolio",
+                    "sub-menu":[
+                        {
+                            "id": 1,
+                            "icon": "",
+                            "item": "Grúas Ememca",
+                            "link": "/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "",
+                            "item": "Kamas",
+                            "link": "/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "item": "Sobre mi",
+                    "link": "/sobre-mi/"
+                },
+                {
+                    "id": 6,
+                    "item": "Contacto",
+                    "link": "/contacto/"
+                }
+            ]
+        }
+    ]
+}
