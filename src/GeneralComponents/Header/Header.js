@@ -209,6 +209,10 @@ function Header() {
 
                             <button type='button' className='theme-button'>
                                 <p>Tema oscuro</p>
+
+                                <div className='theme-button-dot'>
+                                    <span></span>
+                                </div>
                             </button>
                         </ul>
 

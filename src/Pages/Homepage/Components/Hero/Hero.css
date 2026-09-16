@@ -1,4 +1,5 @@
 .hero-container{
+    margin-top: 64px;
     width: 100%;
     height: calc(100vh - 64px);
     max-height: 800px;
@@ -97,10 +98,14 @@
 
 .h-social-nets li{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .h-social-nets li a{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .h-social-nets li a i{
@@ -108,8 +113,26 @@
     color: var(--white);
 }
 
-/* @media screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     .hero-container{
         height: auto;
     }
-} */
+
+    .hero-h1{
+        font-size: 44px;
+    }
+
+    .hero-text-prom{
+        /* background: orange; */
+        width: calc(100% - 44px) !important;
+    }
+
+    .hero-text-info{
+        margin-top: 40px;
+    }
+
+    .hero-text-info::before{
+        height: 4px;
+        margin-bottom: 10px;
+    }
+}
