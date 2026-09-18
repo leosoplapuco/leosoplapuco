@@ -26,6 +26,10 @@ header{
     font-size: 30px;
 }
 
+.dark-mode .header-logo-text{
+    color: var(--white);
+}
+
 .header-center{
     display: flex;
     align-items: center;
@@ -72,8 +76,12 @@ header{
 }
 
 .header-center-sub-menu-tag-title{
-    /* margin-bottom: 20px; */
     font-weight: bold;
+    color: var(--black);
+}
+
+.dark-mode .header-center-sub-menu-tag-title{
+    color: var(--white);
 }
 
 .header-center-sub-menu-tag ul{
@@ -144,6 +152,12 @@ header{
 .hc-button span,
 .menu-link span{
     font-size: 22px;
+}
+
+.hc-button span,
+.hc-button h2,
+.menu-link span,
+.menu-link h2{
     color: var(--text);
 }
 
@@ -187,6 +201,10 @@ header{
     gap: 5px;
 }
 
+.dark-mode .menu-button{
+    border: 1px solid var(--white);
+}
+
 .menu-button-bars{
     display: flex;
     width: 34px;
@@ -209,6 +227,11 @@ header{
     height: 3px;
 
     z-index: 1;
+}
+
+.dark-mode .menu-button-bars::before,
+.dark-mode .menu-button-bars::after{
+    background: var(--white);
 }
 
 .menu-button-bars::before{
@@ -237,6 +260,7 @@ header{
 
 .menu-button::after{
     content: 'Menú';
+    color: var(--text);
 }
 
 .header-menu-content-container{
@@ -283,7 +307,7 @@ header{
 .header-menu-content > ul li a,
 .header-menu-content > ul li button{
     width: 100%;
-    height: 40px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -298,6 +322,12 @@ header{
 .header-menu-content > ul li button:hover{
     background: rgba(0 0 0 / 0.025);
     padding-left: 10px;
+}
+
+.dark-mode .header-menu-content > ul li a:hover,
+.dark-mode .header-menu-content > ul li button.active,
+.dark-mode .header-menu-content > ul li button:hover{
+    background: rgba(235 235 235 / 0.05);
 }
 
 .header-menu-content > ul li a::before,
@@ -324,6 +354,11 @@ header{
     color: var(--text);
 }
 
+.dark-mode .header-menu-content > ul li a::before,
+.dark-mode .header-menu-content > ul li button::before{
+    background: var(--white);
+}
+
 .header-menu-content-list{
     width: 100%;
     display: flex;
@@ -344,12 +379,12 @@ header{
     flex: 1 1 clamp(200px, calc(calc(100% / 2) - calc(10px / 2)), 100%);
     flex-direction: column;
     width: 100%;
-    min-height: 120px;
+    /* min-height: 120px; */
     /* background: orange; */
 }
 
 .header-menu-content-list ul > li a{
-    padding: 10px 0;
+    /* padding: 10px 0; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -363,7 +398,8 @@ header{
     justify-content: center;
     /* color: var(--black); */
     color: var(--text);
-    width: 36px;
+    font-size: 20px;
+    width: 40px;
     aspect-ratio: 1/1;
     border-radius: 100%;
     transition: var(--t-200ms-linear);
@@ -371,7 +407,7 @@ header{
 
 .header-menu-content-list ul > li a:hover > div span,
 .header-menu-content-list ul > li a:hover > div i{
-    background: rgba(0 0 0 / 0.05);
+    background: rgba(0 0 0 / 0.075);
     color: var(--black);
 }
 
@@ -398,19 +434,17 @@ header{
 }
 
 .theme-button{
+    background: rgba(0 0 0 / 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: var(--t-200ms-linear);
     width: 100%;
-    height: 40px;
-    padding: 0 5px;
-    /* background: orange; */
+    padding: 12px 10px;
 }
 
-.theme-button:hover{
-    /* padding: 0 10px; */
-    background: rgba(0 0 0 / 0.025);
+.dark-mode .theme-button{
+    background: #141115;
 }
 
 .theme-button-dot{
@@ -418,13 +452,13 @@ header{
     position: relative;
     width: 42px;
     height: 24px;
-    /* background: gray; */
     border: 1px solid #00000010;
+    background: #00000010;
     transition: var(--t-200ms-linear);
     border-radius: 25px;
 }
 
-.theme-button-dot:hover{
+.theme-button.active .theme-button-dot{
     background: rgb(33, 241, 33);
 }
 
@@ -438,12 +472,16 @@ header{
     height: calc(100% - 4px);
     aspect-ratio: 1/1;
     border-radius: 100%;
-    background: #00000040;
+    background: var(--white);
     transition: var(--t-200ms-linear);
 }
 
 .theme-button-dot:hover span{
     background: var(--white);
+}
+
+.theme-button.active .theme-button-dot span{
+    left: calc(100% - 20px);
 }
 
 @media screen and (max-width: 600px){
