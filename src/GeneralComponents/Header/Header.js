@@ -3,19 +3,14 @@ import { useState, useEffect } from 'react';
 import './Header.css';
 
 function Header() {
-    // Estados para los datos del JSON
     const [navbarData, setNavbarData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    // Estados para los menús
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    // Estado para el item activo del menú móvil (guarda el id del item con sub-menu)
     const [activeMenuItem, setActiveMenuItem] = useState(null);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // Fetch de los datos
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -38,26 +33,51 @@ function Header() {
         fetchData();
     }, []);
 
-    // Toggle del submenú de servicios (desktop)
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('darkMode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldBeDark = savedTheme !== null ? savedTheme === 'true' : prefersDark;
+
+        setIsDarkMode(shouldBeDark);
+
+        if (shouldBeDark) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    }, []);
+
     const toggleSubMenu = () => {
         setIsSubMenuOpen(!isSubMenuOpen);
     };
 
-    // Toggle del menú móvil
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-        // Al cerrar el menú, reseteamos el item activo
         if (isMenuOpen) {
             setActiveMenuItem(null);
+        } else {
+            // Al abrir el menú móvil, cerramos el submenú de desktop
+            setIsSubMenuOpen(false);
         }
     };
 
-    // Manejar click en un item del menú móvil (sin toggle)
     const handleMenuItemClick = (itemId) => {
         setActiveMenuItem(itemId);
     };
 
-    // Obtener el submenú activo para renderizar sus opciones
+    const toggleTheme = () => {
+        const newDarkMode = !isDarkMode;
+        setIsDarkMode(newDarkMode);
+
+        if (newDarkMode) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+
+        localStorage.setItem('darkMode', newDarkMode.toString());
+    };
+
     const getActiveSubMenu = () => {
         if (!activeMenuItem || !navbarData) return null;
         const menuData = navbarData.navbar[1].menu;
@@ -65,7 +85,6 @@ function Header() {
         return activeItem && activeItem['sub-menu'] ? activeItem['sub-menu'] : null;
     };
 
-    // Si está cargando o hay error, mostramos un header básico
     if (loading) {
         return (
             <header>
@@ -92,16 +111,11 @@ function Header() {
         );
     }
 
-    // Extraemos los datos
     const centerData = navbarData.navbar[0].center;
     const navData = navbarData.navbar[0].nav;
     const menuData = navbarData.navbar[1].menu;
-
-    // Separamos los items del centro
     const serviciosItem = centerData.find(item => item.lista);
     const portafolioItem = centerData.find(item => !item.lista);
-
-    // Submenú activo actual
     const activeSubMenu = getActiveSubMenu();
 
     return (
@@ -114,26 +128,17 @@ function Header() {
                 <ul className='header-center'>
                     {serviciosItem && (
                         <li>
-                            <button
-                                type='button'
-                                className='hc-button hc-button-1'
-                                onClick={toggleSubMenu}
-                            >
+                            <button type='button' className='hc-button hc-button-1' onClick={toggleSubMenu}>
                                 <h2>{serviciosItem.item}</h2>
                                 <span className="material-symbols-outlined">keyboard_arrow_down</span>
                             </button>
 
-                            <div className={`header-center-sub-menu-container ${isSubMenuOpen ? 'active' : ''}`}>
+                            <div className={`header-center-sub-menu-container ${isSubMenuOpen && !isMenuOpen ? 'active' : ''}`}>
                                 <div className='header-center-sub-menu'>
                                     {serviciosItem.lista.map((subItem) => (
-                                        <div
-                                            key={subItem.id}
-                                            className={`header-center-sub-menu-tag header-center-sub-menu-tag-${subItem.id}`}
-                                        >
+                                        <div key={subItem.id} className={`header-center-sub-menu-tag header-center-sub-menu-tag-${subItem.id}`}>
                                             <div className='d-flex-center-left margin-bottom-20 gap-5'>
-                                                <span className="material-symbols-outlined">
-                                                    {subItem.titulo === 'Web' ? 'code' : 'cloud'}
-                                                </span>
+                                                <span className="material-symbols-outlined">{subItem.titulo === 'Web' ? 'code' : 'cloud'}</span>
                                                 <p className='header-center-sub-menu-tag-title'>{subItem.titulo}</p>
                                             </div>
 
@@ -175,48 +180,37 @@ function Header() {
                         </ul>
                     </nav>
 
-                    <button
-                        type='button'
-                        className={`menu-button ${isMenuOpen ? 'active' : ''}`}
-                        onClick={toggleMenu}
-                    >
+                    <button type='button' className={`menu-button ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                         <div className='menu-button-bars'></div>
                     </button>
                 </div>
 
                 <div className={`header-menu-content-container ${isMenuOpen ? 'active' : ''}`}>
                     <div className='header-menu-content'>
-                        {/* Columna izquierda: items principales */}
                         <ul className='d-flex-column'>
                             {menuData.map((item) => (
                                 <li key={item.id}>
                                     {item['sub-menu'] ? (
-                                        <button
-                                            type='button'
-                                            className={`${activeMenuItem === item.id ? 'active' : ''}`}
-                                            onClick={() => handleMenuItemClick(item.id)}
-                                        >
-                                            <p>{item.item}</p>
+                                        <button type='button' className={`${activeMenuItem === item.id ? 'active' : ''}`} onClick={() => handleMenuItemClick(item.id)}>
+                                            <p className='text'>{item.item}</p>
                                             <span className="material-symbols-outlined">chevron_right</span>
                                         </button>
                                     ) : (
                                         <a href={item.link} className=''>
-                                            <p>{item.item}</p>
+                                            <p className='text'>{item.item}</p>
                                         </a>
                                     )}
                                 </li>
                             ))}
 
-                            <button type='button' className='theme-button'>
-                                <p>Tema oscuro</p>
-
+                            <button type='button' className={`theme-button ${isDarkMode ? 'active' : ''}`} onClick={toggleTheme}>
+                                <p className='text'>{isDarkMode ? 'Tema claro' : 'Tema oscuro'}</p>
                                 <div className='theme-button-dot'>
                                     <span></span>
                                 </div>
                             </button>
                         </ul>
 
-                        {/* Columna derecha: submenú del item activo */}
                         <div className='header-menu-content-list'>
                             {activeSubMenu ? (
                                 <ul>
@@ -237,23 +231,18 @@ function Header() {
                                                     <p>{subItem.item}</p>
                                                 </div>
 
-                                                <p>{subItem.resume}</p>
+                                                <p className='text'>{subItem.resume}</p>
                                             </a>
                                         </li>
                                     ))}
                                 </ul>
                             ) : (
-                                <p className='header-menu-content-list-empty'>
-                                    Selecciona una opción para ver más
-                                </p>
+                                <p className='header-menu-content-list-empty text'>Selecciona una opción para ver más</p>
                             )}
                         </div>
 
                         <div className='header-menu-content-images'>
-                            <img
-                                src='https://img.magnific.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?semt=ais_hybrid&w=740&q=80'
-                                alt=''
-                            />
+                            <img src='https://img.magnific.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?semt=ais_hybrid&w=740&q=80' alt=''/>
                         </div>
                     </div>
                 </div>

@@ -41,14 +41,16 @@ body{
     color: var(--text);
 }
 
-body.theme-gray{
-    --body: #707070;
+body.dark-mode{
+    --body: #222;
+    --header: #000;
+
     --text: snow;
 }
 
-body.theme-dark{
-    --body: #212121;
-    --text: snow;
+.text{
+    transition: var(--t-200ms-linear);
+    color: var(--text);
 }
 
 .d-flex{
