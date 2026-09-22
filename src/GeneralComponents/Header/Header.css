@@ -292,7 +292,7 @@ header{
     max-width: var(--mx-w-content);
     display: grid;
     grid-template-columns: 240px 1fr 360px;
-    gap: 20px;
+    gap: 10px;
 }
 
 .header-menu-content ul{
@@ -344,19 +344,28 @@ header{
     opacity: 0;
 }
 
+.dark-mode .header-menu-content > ul li a::before,
+.dark-mode .header-menu-content > ul li button::before{
+    background: var(--white);
+}
+
 .header-menu-content > ul li a.active::before,
 .header-menu-content > ul li button.active:before{
     opacity: 1;
 }
 
 .header-menu-content > ul li a p,
-.header-menu-content > ul li button p{
+.header-menu-content > ul li button p,
+.header-menu-content > ul li a span,
+.header-menu-content > ul li button span{
     color: var(--text);
 }
 
-.dark-mode .header-menu-content > ul li a::before,
-.dark-mode .header-menu-content > ul li button::before{
-    background: var(--white);
+.dark-mode .header-menu-content > ul li a p,
+.dark-mode .header-menu-content > ul li button p,
+.dark-mode .header-menu-content > ul li a span,
+.dark-mode .header-menu-content > ul li button span{
+    color: var(--text);
 }
 
 .header-menu-content-list{
@@ -375,28 +384,63 @@ header{
 }
 
 .header-menu-content-list ul > li{
+    width: 100%;
     display: flex;
     flex: 1 1 clamp(200px, calc(calc(100% / 2) - calc(10px / 2)), 100%);
+    max-width: calc(50% - 5px);
+    transition: var(--t-200ms-linear);
     flex-direction: column;
-    width: 100%;
-    /* min-height: 120px; */
-    /* background: orange; */
 }
 
 .header-menu-content-list ul > li a{
-    /* padding: 10px 0; */
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    /* background: blue; */
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    transition: var(--t-200ms-linear);
+    overflow: hidden;
+    border-radius: 4px;
+
+    position: relative;
 }
 
-.header-menu-content-list ul > li a > div span,
-.header-menu-content-list ul > li a > div i{
+.header-menu-content-list ul > li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: flex;
+    background: #555;
+    transition: var(--t-200ms-linear);
+    width: 90px;
+    aspect-ratio: 1/1;
+    z-index: -2;
+    scale: 0;
+
+    border-radius: 100%;
+}
+
+.header-menu-content-list ul > li a:hover{
+    background: rgba(0 0 0 / 0.025);
+}
+
+.header-menu-content-list ul > li a:hover::before{
+    scale: 4;
+    background: #212121;
+}
+
+.dark-mode .header-menu-content-list ul > li a:hover{
+    background: rgba(235 235 235 / 0.05);
+}
+
+.header-menu-content-list ul > li a > span,
+.header-menu-content-list ul > li a > i{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* color: var(--black); */
     color: var(--text);
     font-size: 20px;
     width: 40px;
@@ -405,26 +449,39 @@ header{
     transition: var(--t-200ms-linear);
 }
 
-.header-menu-content-list ul > li a:hover > div span,
-.header-menu-content-list ul > li a:hover > div i{
+.header-menu-content-list ul > li a:hover > span,
+.header-menu-content-list ul > li a:hover > i{
     background: rgba(0 0 0 / 0.075);
     color: var(--black);
 }
 
-.header-menu-content-list ul > li a > div p{
+.dark-mode .header-menu-content-list ul > li a:hover > span,
+.dark-mode .header-menu-content-list ul > li a:hover > i{
+    background: var(--white);
+    color: var(--black);
+}
+
+.header-menu-content-list ul > li a > div p:nth-child(1){
     font-weight: bold;
     color: #666666;
     transition: var(--t-200ms-linear);
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.header-menu-content-list ul > li a > div p:nth-child(1){
+    color: #999999;
+}
+
+.header-menu-content-list ul > li a:hover > div p:nth-child(1){
+    color: var(--white);
+}
+
+.dark-mode .header-menu-content-list ul > li a:hover > div p{
+    color: var(--white) !important;
 }
 
 .header-menu-content-list ul > li a:hover > div p{
     color: var(--black);
-}
-
-.header-menu-content-list ul > li a > p{
-    margin-left: 41px;
-    color: var(--text);
 }
 
 .header-menu-content-images img{

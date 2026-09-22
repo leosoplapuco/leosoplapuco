@@ -159,6 +159,13 @@
                             "item": "Kamas",
                             "link": "/",
                             "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "",
+                            "item": "Dormihogar",
+                            "link": "/",
+                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
                         }
                     ]
                 },
