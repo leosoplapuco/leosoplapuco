@@ -5,10 +5,10 @@ import './Cursor.css';
 const Cursor = ({ 
   offsetX = 20, 
   offsetY = 20, 
-  size = 20, 
+  size = 80, 
   color = '#222222',
   followSpeed = 0.1,
-  circleSize = 40
+  circleSize = 20
 }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [clickCircles, setClickCircles] = useState([]);

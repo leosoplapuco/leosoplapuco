@@ -2,7 +2,8 @@
     margin-top: 64px;
     width: 100%;
     height: calc(100vh - 64px);
-    max-height: 800px;
+    padding: 20px;
+    max-height: 1000px;
     position: relative;
 }
 
@@ -41,7 +42,6 @@
     width: 100%;
     max-width: var(--mx-w-content);
     height: 100%;
-    padding: 20px;
 }
 
 .hero-text-prom{

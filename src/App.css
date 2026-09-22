@@ -30,6 +30,8 @@
     --mx-w-content: 1440px;
 
     --t-200ms-linear: all 200ms linear;
+    --t-300ms-linear: all 300ms linear;
+    --t-500ms-linear: all 500ms linear;
 }
 
 body::-webkit-scrollbar{

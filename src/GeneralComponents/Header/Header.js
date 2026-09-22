@@ -56,7 +56,6 @@ function Header() {
         if (isMenuOpen) {
             setActiveMenuItem(null);
         } else {
-            // Al abrir el menú móvil, cerramos el submenú de desktop
             setIsSubMenuOpen(false);
         }
     };
@@ -217,21 +216,22 @@ function Header() {
                                     {activeSubMenu.map((subItem) => (
                                         <li key={subItem.id}>
                                             <a href={subItem.link} title=''>
-                                                <div className='d-flex-center-left gap-5'>
-                                                    <span className="material-symbols-outlined">
-                                                        {subItem.item.toLowerCase().includes('hosting') ? 'cloud' :
-                                                         subItem.item.toLowerCase().includes('dominio') ? 'language' :
-                                                         subItem.item.toLowerCase().includes('ssl') ? 'lock' :
-                                                         subItem.item.toLowerCase().includes('vps') ? 'dns' :
-                                                         subItem.item.toLowerCase().includes('seo') ? 'leaderboard' :
-                                                         subItem.item.toLowerCase().includes('asesor') ? 'videocam' :
-                                                         subItem.item.toLowerCase().includes('google') ? 'public' :
-                                                         'code'}
-                                                    </span>
-                                                    <p>{subItem.item}</p>
-                                                </div>
+                                                <span className="material-symbols-outlined">
+                                                    {
+                                                        subItem.item.toLowerCase().includes('hosting') ? 'cloud' :
+                                                        subItem.item.toLowerCase().includes('dominio') ? 'language' :
+                                                        subItem.item.toLowerCase().includes('ssl') ? 'lock' :
+                                                        subItem.item.toLowerCase().includes('vps') ? 'dns' :
+                                                        subItem.item.toLowerCase().includes('seo') ? 'leaderboard' :
+                                                        subItem.item.toLowerCase().includes('asesor') ? 'videocam' :
+                                                        subItem.item.toLowerCase().includes('google') ? 'public' : 'code'
+                                                    }
+                                                </span>
 
-                                                <p className='text'>{subItem.resume}</p>
+                                                <div className='d-flex-column'>
+                                                    <p>{subItem.item}</p>
+                                                    <p className='text'>{subItem.resume}</p>
+                                                </div>
                                             </a>
                                         </li>
                                     ))}
