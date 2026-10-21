@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import './Header.css';
+import './MenuButton.css';
 
 function Header() {
     const [navbarData, setNavbarData] = useState(null);
@@ -128,7 +129,7 @@ function Header() {
                     {serviciosItem && (
                         <li>
                             <button type='button' className='hc-button hc-button-1' onClick={toggleSubMenu}>
-                                <h2>{serviciosItem.item}</h2>
+                                <h2 className='text'>{serviciosItem.item}</h2>
                                 <span className="material-symbols-outlined">keyboard_arrow_down</span>
                             </button>
 
@@ -145,7 +146,7 @@ function Header() {
                                                 {subItem.lista.map((link, index) => (
                                                     <li key={index}>
                                                         <a href={link.link} className=''>
-                                                            <p>{link.item}</p>
+                                                            <p className='text'>{link.item}</p>
                                                         </a>
                                                     </li>
                                                 ))}
@@ -186,21 +187,23 @@ function Header() {
 
                 <div className={`header-menu-content-container ${isMenuOpen ? 'active' : ''}`}>
                     <div className='header-menu-content'>
-                        <ul className='d-flex-column'>
-                            {menuData.map((item) => (
-                                <li key={item.id}>
-                                    {item['sub-menu'] ? (
-                                        <button type='button' className={`${activeMenuItem === item.id ? 'active' : ''}`} onClick={() => handleMenuItemClick(item.id)}>
-                                            <p className='text'>{item.item}</p>
-                                            <span className="material-symbols-outlined">chevron_right</span>
-                                        </button>
-                                    ) : (
-                                        <a href={item.link} className=''>
-                                            <p className='text'>{item.item}</p>
-                                        </a>
-                                    )}
-                                </li>
-                            ))}
+                        <div>
+                            <ul className='header-menu-content-list-left'>
+                                {menuData.map((item) => (
+                                    <li key={item.id}>
+                                        {item['sub-menu'] ? (
+                                            <button type='button' className={`${activeMenuItem === item.id ? 'active' : ''}`} onClick={() => handleMenuItemClick(item.id)}>
+                                                <p className='text'>{item.item}</p>
+                                                <span className="material-symbols-outlined">arrow_right_alt</span>
+                                            </button>
+                                        ) : (
+                                            <a href={item.link} className=''>
+                                                <p className='text'>{item.item}</p>
+                                            </a>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
 
                             <button type='button' className={`theme-button ${isDarkMode ? 'active' : ''}`} onClick={toggleTheme}>
                                 <p className='text'>{isDarkMode ? 'Tema claro' : 'Tema oscuro'}</p>
@@ -208,7 +211,12 @@ function Header() {
                                     <span></span>
                                 </div>
                             </button>
-                        </ul>
+
+                            <div className='d-flex-column'>
+                                <p className='text'>Desarrollo web y soluciones digitales.</p>
+                                <p className='text'>Lima, Perú</p>
+                            </div>
+                        </div>
 
                         <div className='header-menu-content-list'>
                             {activeSubMenu ? (
@@ -216,7 +224,7 @@ function Header() {
                                     {activeSubMenu.map((subItem) => (
                                         <li key={subItem.id}>
                                             <a href={subItem.link} title=''>
-                                                <span className="material-symbols-outlined">
+                                                <span className="material-symbols-outlined p-icon">
                                                     {
                                                         subItem.item.toLowerCase().includes('hosting') ? 'cloud' :
                                                         subItem.item.toLowerCase().includes('dominio') ? 'language' :
@@ -228,10 +236,12 @@ function Header() {
                                                     }
                                                 </span>
 
-                                                <div className='d-flex-column'>
-                                                    <p>{subItem.item}</p>
+                                                <div className='d-flex-column gap-10'>
+                                                    <p className='mn-tg-title'>{subItem.item}</p>
                                                     <p className='text'>{subItem.resume}</p>
                                                 </div>
+                                                
+                                                <span class="material-symbols-outlined p-icon-float">arrow_right_alt</span>
                                             </a>
                                         </li>
                                     ))}
