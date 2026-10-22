@@ -8,7 +8,7 @@
     font-weight: 500;
     list-style: none;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 :root{
@@ -57,6 +57,11 @@ body.dark-mode{
 
 .d-flex{
     display: flex;
+}
+
+.d-flex-column{
+    display: flex;
+    flex-direction: column;
 }
 
 .d-flex-center-center{

@@ -1,0 +1,127 @@
+.menu-button{
+    width: auto;
+    height: 40px;
+    border: 1px solid var(--black);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    transition: var(--t-200ms-linear);
+    overflow: hidden;
+    position: relative;
+    gap: 10px;
+}
+
+.menu-button::before{
+    content: 'Menú';
+    transition: var(--t-200ms-linear);
+    color: var(--text);
+}
+
+.dark-mode .menu-button::before{
+    color: var(--white);
+}
+
+.menu-button:hover::before,
+.menu-button.active::before{
+    color: var(--white);
+}
+
+.dark-mode .menu-button:hover::before,
+.dark-mode .menu-button.active::before{
+    color: var(--black);
+}
+
+.menu-button::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: flex;
+    width: 10px;
+    aspect-ratio: 1/1;
+    scale: 0;
+    transition: var(--t-200ms-linear);
+    background: var(--black-2);
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.dark-mode .menu-button{
+    border: 1px solid var(--white);
+}
+
+.menu-button.active::after,
+.menu-button:hover::after{
+    scale: 11;
+}
+
+.dark-mode .menu-button::after{
+    background: var(--white);
+}
+
+.menu-button-bars{
+    display: flex;
+    width: 32px;
+    aspect-ratio: 1/1;
+    position: relative;
+    transition: var(--t-200ms-linear);
+}
+
+.menu-button.active .menu-button-bars::before,
+.menu-button.active .menu-button-bars::after,
+.menu-button:hover .menu-button-bars::before,
+.menu-button:hover .menu-button-bars::after{
+    background: var(--white)
+}
+
+.dark-mode .menu-button.active .menu-button-bars::before,
+.dark-mode .menu-button.active .menu-button-bars::after,
+.dark-mode .menu-button:hover .menu-button-bars::before,
+.dark-mode .menu-button:hover .menu-button-bars::after{
+    background: var(--black)
+}
+
+.menu-button-bars::before,
+.menu-button-bars::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    width: 80%;
+    height: 2px;
+    display: flex;
+    background: var(--black);
+    transition: var(--t-200ms-linear);
+}
+
+.menu-button-bars::before{
+    top: 18px;
+}
+
+.menu-button-bars::after{
+    bottom: 18px;
+}
+
+.menu-button.active .menu-button-bars::before,
+.menu-button.active .menu-button-bars::after{
+    bottom: unset;
+    top: 50%;
+    translate: -50% -50%;
+    width: 50%;
+}
+
+.menu-button.active .menu-button-bars::before{
+    rotate: 45deg;
+}
+
+.menu-button.active .menu-button-bars::after{
+    rotate: -45deg;
+}
+
+.dark-mode .menu-button-bars::before,
+.dark-mode .menu-button-bars::after{
+    background: var(--white);
+}
