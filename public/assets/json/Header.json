@@ -87,33 +87,35 @@
                     "sub-menu":[
                         {
                             "id": 1,
-                            "icon": "",
+                            "icon": "code",
                             "item": "Desarrollo web",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Sitios web modernos, rápidos y optimizados para convertir visitantes en clientes."
                         },
                         {
                             "id": 2,
-                            "icon": "",
+                            "icon": "leaderboard",
                             "item": "Optimización SEO",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Mejora tu posición en Google y atrae más tráfico orgánico a tu sitio."
                         },
                         {
                             "id": 3,
-                            "icon": "",
+                            "icon": "videocam",
                             "item": "Asesoría personalizada",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Resolvamos tus dudas y trazamos juntos la mejor estrategia digital para tu negocio."
                         },
                         {
                             "id": 4,
-                            "icon": "",
+                            "icon": "public",
                             "item": "Tu negocio en Google",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Destaca en Google y atrae clientes locales directamente a tu establecimiento."
                         }
-                    ]
+                    ],
+                    "image": "https://static.vecteezy.com/system/resources/previews/003/807/899/non_2x/programmer-computers-in-workplace-vector.jpg",
+                    "image-alt": "image-1"
                 },
                 {
                     "id": 3,
@@ -121,26 +123,28 @@
                     "sub-menu":[
                         {
                             "id": 1,
-                            "icon": "",
+                            "icon": "cloud",
                             "item": "Hosting web",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Alojamiento web rápido, seguro y escalable adaptado a las exigencias de tu proyecto."
                         },
                         {
                             "id": 2,
-                            "icon": "",
+                            "icon": "language",
                             "item": "Dominio web",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Registra el nombre perfecto para tu marca y asegura tu presencia digital."
                         },
                         {
                             "id": 3,
-                            "icon": "",
+                            "icon": "lock",
                             "item": "Certificación SSL",
                             "link": "/servicios/cloud/hosting-web/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Protege los datos de tus usuarios con cifrado de seguridad y el candado verde en el navegador."
                         }
-                    ]
+                    ],
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhBHjqf0u2cHgkVAIPr1b3Ab_6iC5HeQtV1BAza7a_9_zmcWUQZvu5s2U&s=10",
+                    "image-alt": "image-2"
                 },
                 {
                     "id": 4,
@@ -148,26 +152,35 @@
                     "sub-menu":[
                         {
                             "id": 1,
-                            "icon": "",
-                            "item": "Grúas Ememca",
-                            "link": "/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "icon": "timer_1",
+                            "item": "Kamas",
+                            "link": "https://kamas.pe/",
+                            "resume": "Catalogo web dinámico para importante empresa del sector hogar."
                         },
                         {
                             "id": 2,
-                            "icon": "",
-                            "item": "Kamas",
-                            "link": "/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "icon": "timer_2",
+                            "item": "Dormihogar",
+                            "link": "https://dormihogar.pe/",
+                            "resume": "Tienda multimarca de productos para dormitorio."
                         },
                         {
                             "id": 3,
-                            "icon": "",
-                            "item": "Dormihogar",
+                            "icon": "timer_3",
+                            "item": "Homesleep",
+                            "link": "https://homesleep.pe/",
+                            "resume": "Tienda multimarca de productos para dormitorio."
+                        },
+                        {
+                            "id": 4,
+                            "icon": "call_made",
+                            "item": "Ver más",
                             "link": "/",
-                            "resume": "Haz crecer tu negocio dandole un sitio en internet"
+                            "resume": "Revisa mi portafolio completo y enterate más de mi trabajo."
                         }
-                    ]
+                    ],
+                    "image": "https://unirfp.unir.net/wp-content/uploads/sites/23/2025/05/Que-hace-un-programador-informatico-y-cuanto-cobra-en-Espana1.jpg",
+                    "image-alt": "image-3"
                 },
                 {
                     "id": 5,

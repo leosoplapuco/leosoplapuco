@@ -126,7 +126,7 @@ header{
     top: 64px;
     width: 100%;
     height: calc(100vh - 64px);
-    max-height: 800px;
+    max-height: 1000px;
     background: var(--header);
     transition: var(--t-200ms-linear);
 
@@ -295,7 +295,7 @@ header{
 
 .header-menu-content-list ul li a{
     display: flex;
-    gap: 10px;
+    gap: 20px;
     position: relative;
     padding: 20px;
 }
@@ -310,6 +310,11 @@ header{
     height: 48px;
 }
 
+.dark-mode .p-icon{
+    background: var(--white);
+    color: var(--black);
+}
+
 .header-menu-content-list ul li a > div{
     width: calc(100% - 48px);
 }
@@ -322,6 +327,10 @@ header{
 
 .dark-mode .mn-tg-title{
     color: var(--white);
+}
+
+.dark-mode .header-menu-content-list ul li a div p.text{
+    color: #999;
 }
 
 .p-icon-float{
@@ -359,8 +368,12 @@ header{
         display: none;
     }
 
+    .header-menu-content-container{
+        max-height: none;
+    }
+
     .header-menu-content{
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 1fr;
     }
 
     .header-menu-content > div:nth-child(1){
@@ -370,6 +383,8 @@ header{
     .header-menu-content-list{
         padding: 0;
         overflow-x: auto;
+
+        display: none;
     }
 
     .header-menu-content-list ul{
@@ -383,6 +398,24 @@ header{
 
     .header-menu-content-list ul li:nth-last-child(1){
         border: 0 !important;
+    }
+
+    .header-menu-content-list-left li button,
+    .header-menu-content-list-left li a{
+        height: 56px;
+    }
+
+    .theme-button{
+        height: 60px;
+    }
+
+    .theme-button-dot{
+        width: 48px;
+        height: 24px;
+    }
+
+    .theme-button.active .theme-button-dot::before{
+        left: calc(100% - 22px);
     }
 
     .header-menu-content-images{
