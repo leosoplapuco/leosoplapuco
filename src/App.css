@@ -34,6 +34,8 @@
     --t-500ms-linear: all 500ms linear;
 }
 
+/**/
+
 body::-webkit-scrollbar{
     display: none;
 }
@@ -49,6 +51,14 @@ body.dark-mode{
 
     --text: snow;
 }
+
+/**/
+
+.main-content{
+    margin-top: 64px;
+}
+
+/**/
 
 .text{
     transition: var(--t-200ms-linear);
@@ -198,6 +208,26 @@ button{
 
 .button-link-3::before{
     background: var(--white);
+}
+
+.button-link-4{
+    border: 1px solid var(--black);
+    border-radius: 0;
+}
+
+.button-link-4 .button-link-text,
+.button-link-4 span{
+    color: var(--text);
+}
+
+
+.dark-mode .button-link-4{
+    border: 1px solid var(--white);
+}
+
+.dark-mode .button-link-4 .button-link-text,
+.dark-mode .button-link-4 span{
+    color: var(--white);
 }
 
 .text-center{

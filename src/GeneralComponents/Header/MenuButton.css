@@ -125,3 +125,10 @@
 .dark-mode .menu-button-bars::after{
     background: var(--white);
 }
+
+@media screen and (max-width: 600px){
+    .menu-button{
+        width: auto;
+        height: 48px;
+    }
+}
