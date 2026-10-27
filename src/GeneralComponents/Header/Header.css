@@ -1,12 +1,17 @@
+:root{
+    --header-height: 64px;
+}
+
 header{
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 64px;
+    height: var(--header-height);
     padding: 0 20px;
     background: var(--header);
     border-bottom: 1px solid var(--component);
+    transition: var(--t-200ms-linear);
     z-index: 999;
 }
 
@@ -123,9 +128,9 @@ header{
 .header-menu-content-container{
     position: fixed;
     left: 0;
-    top: 64px;
+    top: var(--header-height);
     width: 100%;
-    height: calc(100vh - 64px);
+    height: calc(100vh - var(--header-height));
     max-height: 1000px;
     background: var(--header);
     transition: var(--t-200ms-linear);
@@ -266,7 +271,8 @@ header{
 }
 
 .header-menu-content-list{
-    /* background: red; */
+    transition: var(--t-200ms-linear);
+    background: var(--header);
     padding: 20px
 }
 
@@ -277,7 +283,7 @@ header{
 
 .header-menu-content-list ul li{
     display: flex;
-    background: var(--header);
+    /* background: var(--header); */
 }
 
 .header-menu-content-list ul li:nth-child(1){
@@ -359,13 +365,28 @@ header{
     object-fit: cover;
 }
 
+.header-menu-back-button{
+    display: none;
+}
+
 @media screen and (max-width: 600px){
+    :root{
+        --header-height: 72px;
+    }
+
     .header-center{
         display: none;
     }
 
     .menu{
         display: none;
+    }
+
+    .header-menu-back-button{
+        display: flex;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     .header-menu-content-container{
@@ -384,7 +405,23 @@ header{
         padding: 0;
         overflow-x: auto;
 
-        display: none;
+        position: fixed;
+        left: 100%;
+        /* left: 0; */
+        top: var(--header-height);
+        width: 100vw;
+        height: calc(100vh - var(--header-height));
+        transition: var(--t-200ms-linear);
+        z-index: 9999;
+        opacity: 0;
+        /* background: red !important; */
+
+        /* display: none; */
+    }
+
+    .header-menu-content-list.active{
+        left: 0;
+        opacity: 1;
     }
 
     .header-menu-content-list ul{
@@ -402,11 +439,11 @@ header{
 
     .header-menu-content-list-left li button,
     .header-menu-content-list-left li a{
-        height: 56px;
+        height: 68px;
     }
 
     .theme-button{
-        height: 60px;
+        height: 78px;
     }
 
     .theme-button-dot{

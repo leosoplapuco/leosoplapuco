@@ -4,6 +4,7 @@ import './App.css';
 
 import Layout from './Pages/Layout';
 import Homepage from './Pages/Homepage/Homepage';
+import Contact from './Pages/Contact/Contact';
 
 function App(){
     return(
@@ -11,6 +12,8 @@ function App(){
             <Layout>
                 <Routes>
                     <Route path="/" element={<Homepage />} />
+
+                    <Route path="/contacto/" element={<Contact />} />
                 </Routes>
             </Layout>
         </Router>

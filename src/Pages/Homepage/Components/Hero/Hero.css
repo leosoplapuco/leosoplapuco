@@ -116,6 +116,7 @@
 @media screen and (max-width: 600px){
     .hero-container{
         height: auto;
+        max-height: none;
     }
 
     .hero-h1{
