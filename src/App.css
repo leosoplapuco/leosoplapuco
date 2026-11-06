@@ -25,6 +25,8 @@
     --black-3: #333333;
     --black-4: #444444;
 
+    --black-t-white: #222222;
+
     --component: #939393;
 
     --mx-w-content: 1440px;
@@ -50,6 +52,7 @@ body.dark-mode{
     --header: #000;
 
     --text: snow;
+    --black-t-white: #ffffff;
 }
 
 /**/
@@ -248,6 +251,10 @@ body.theme-dark .text-black-to-white{
 
 body.theme-dark .text-white-to-black{
     color: #000;
+}
+
+.margin-bottom-10{
+    margin-bottom: 10px;
 }
 
 .margin-bottom-20{
