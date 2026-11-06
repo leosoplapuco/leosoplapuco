@@ -143,7 +143,7 @@ function Header() {
                 <ul className='header-center'>
                     {serviciosItem && (
                         <li>
-                            <button type='button' className='hc-button hc-button-1' onClick={toggleSubMenu}>
+                            <button type='button' className={`hc-button hc-button-1 ${isSubMenuOpen ? 'active' : ''}`} onClick={toggleSubMenu} >
                                 <h2 className='text'>{serviciosItem.item}</h2>
                                 <span className="material-symbols-outlined">keyboard_arrow_down</span>
                             </button>
@@ -152,7 +152,7 @@ function Header() {
                                 <div className='header-center-sub-menu'>
                                     {serviciosItem.lista.map((subItem) => (
                                         <div key={subItem.id} className={`header-center-sub-menu-tag header-center-sub-menu-tag-${subItem.id}`}>
-                                            <div className='d-flex-center-left margin-bottom-20 gap-5'>
+                                            <div className='d-flex-center-left gap-20'>
                                                 <span className="material-symbols-outlined">{subItem.titulo === 'Web' ? 'code' : 'cloud'}</span>
                                                 <p className='header-center-sub-menu-tag-title'>{subItem.titulo}</p>
                                             </div>
@@ -161,6 +161,7 @@ function Header() {
                                                 {subItem.lista.map((link, index) => (
                                                     <li key={index}>
                                                         <a href={link.link} className=''>
+                                                            <span class="material-symbols-outlined">arrow_right_alt</span>
                                                             <p className='text'>{link.item}</p>
                                                         </a>
                                                     </li>
