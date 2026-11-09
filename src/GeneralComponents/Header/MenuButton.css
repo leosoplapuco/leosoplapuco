@@ -131,4 +131,9 @@
         width: auto;
         height: 48px;
     }
+
+    .menu-button.active::after,
+    .menu-button:hover::after{
+        scale: 12;
+    }
 }

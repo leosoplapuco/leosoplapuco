@@ -161,7 +161,7 @@ function Header() {
                                                 {subItem.lista.map((link, index) => (
                                                     <li key={index}>
                                                         <a href={link.link} className=''>
-                                                            <span class="material-symbols-outlined">arrow_right_alt</span>
+                                                            <span className="material-symbols-outlined">arrow_right_alt</span>
                                                             <p className='text'>{link.item}</p>
                                                         </a>
                                                     </li>
@@ -239,11 +239,7 @@ function Header() {
                         </div>
 
                         <div className={`header-menu-content-list ${isSubMenuViewOpen ? 'active' : ''}`}>
-                            <button
-                                type='button'
-                                className='button-link button-link-4 header-menu-back-button'
-                                onClick={handleBackClick}
-                            >
+                            <button type='button' className='button-link button-link-4 header-menu-back-button' onClick={handleBackClick}>
                                 <span className="material-symbols-outlined">arrow_back</span>
                                 <p className='button-link-text'>Regresar</p>
                             </button>
