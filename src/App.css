@@ -63,6 +63,34 @@ body.dark-mode{
 
 /**/
 
+.block-container{
+    width: 100vw;
+    padding: 0 20px;
+
+    display: flex;
+}
+
+.block-content{
+    margin: auto;
+    width: 100%;
+    max-width: var(--mx-w-content);
+}
+
+.block-title-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.block-title{
+    width: auto;
+    display: flex;
+    font-size: 22px;
+}
+
+/**/
+
 .text{
     transition: var(--t-200ms-linear);
     color: var(--text);
@@ -259,4 +287,10 @@ body.theme-dark .text-white-to-black{
 
 .margin-bottom-20{
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px){
+    *{
+        font-size: 18px;
+    }
 }

@@ -3,12 +3,12 @@ import { useState, useEffect, useRef } from 'react';
 import './Cursor.css';
 
 const Cursor = ({
-    offsetX = 10,
-    offsetY = 10,
-    size = 30,
-    color = '#222222',
-    followSpeed = 0.05,
-    circleSize = 15
+        offsetX = 10,
+        offsetY = 10,
+        size = 30,
+        color = '#222222',
+        followSpeed = 0.05,
+        circleSize = 15
     }) => {
         const [position, setPosition] = useState({ x: 0, y: 0 });
         const [clickCircles, setClickCircles] = useState([]);
@@ -23,14 +23,13 @@ const Cursor = ({
 
         const handleClick = (e) => {
             const newCircle = {
-            id: Date.now(),
-            x: e.clientX,
-            y: e.clientY,
+                id: Date.now(),
+                x: e.clientX,
+                y: e.clientY,
             };
             setClickCircles(prev => [...prev, newCircle]);
-
             setTimeout(() => {
-            setClickCircles(prev => prev.filter(circle => circle.id !== newCircle.id));
+                setClickCircles(prev => prev.filter(circle => circle.id !== newCircle.id));
             }, 600);
         };
 
@@ -47,72 +46,66 @@ const Cursor = ({
     }, []);
 
     useEffect(() => {
-    if (!cursorRef.current) return;
+        if (!cursorRef.current) return;
 
-    const animate = () => {
-    if (cursorRef.current) {
-    currentPos.current.x += (position.x - currentPos.current.x) * followSpeed;
-    currentPos.current.y += (position.y - currentPos.current.y) * followSpeed;
+        const animate = () => {
+            if (cursorRef.current) {
+                currentPos.current.x += (position.x - currentPos.current.x) * followSpeed;
+                currentPos.current.y += (position.y - currentPos.current.y) * followSpeed;
+                cursorRef.current.style.transform = `translate(${currentPos.current.x + offsetX}px, ${currentPos.current.y + offsetY}px)`;
+            }
+            rafRef.current = requestAnimationFrame(animate);
+        };
 
-    cursorRef.current.style.transform = `translate(${currentPos.current.x + offsetX}px, ${currentPos.current.y + offsetY}px)`;
-    }
-    rafRef.current = requestAnimationFrame(animate);
-    };
+        currentPos.current = { x: position.x, y: position.y };
 
-    currentPos.current = { x: position.x, y: position.y };
-    animate();
+        animate();
 
-    return () => {
-    if (rafRef.current) {
-    cancelAnimationFrame(rafRef.current);
-    }
-    };
+        return () => {
+            if (rafRef.current) {
+                cancelAnimationFrame(rafRef.current);
+            }
+        };
     }, [position, offsetX, offsetY, followSpeed]);
 
     return (
-    <>
-    <div
-    ref={cursorRef}
-    className="custom-cursor"
-    style={{
-    position: 'fixed',
-    pointerEvents: 'none',
-    zIndex: 9999,
-    top: 0,
-    left: 0,
-    width: size,
-    height: size,
-    borderRadius: '50%',
-    backgroundColor: color,
-    opacity: 0.7,
-    border: `2px solid ${color}`,
-    boxShadow: `0 0 20px ${color}40`,
-    transition: 'none',
-    }}
-    />
+        <>
+            <div ref={cursorRef} className="custom-cursor" style={{
+                    position: 'fixed',
+                    pointerEvents: 'none',
+                    zIndex: 9999,
+                    top: 0,
+                    left: 0,
+                    width: size,
+                    height: size,
+                    borderRadius: '50%',
+                    backgroundColor: color,
+                    opacity: 0.7,
+                    border: `2px solid ${color}`,
+                    boxShadow: `0 0 20px ${color}40`,
+                    transition: 'none',
+                }}
+            />
 
-    {clickCircles.map((circle) => (
-    <div
-    key={circle.id}
-    className="click-circle"
-    style={{
-    position: 'fixed',
-    pointerEvents: 'none',
-    zIndex: 9998,
-    top: circle.y - circleSize,
-    left: circle.x - circleSize,
-    width: circleSize * 2,
-    height: circleSize * 2,
-    borderRadius: '50%',
-    border: `2px solid ${color}`,
-    backgroundColor: `${color}33`,
-    transform: 'scale(0)',
-    opacity: 1,
-    animation: 'clickRipple 0.6s ease-out forwards',
-    }}
-    />
-    ))}
-    </>
+            {clickCircles.map((circle) => (
+                <div key={circle.id} className="click-circle" style={{
+                        position: 'fixed',
+                        pointerEvents: 'none',
+                        zIndex: 9998,
+                        top: circle.y - circleSize,
+                        left: circle.x - circleSize,
+                        width: circleSize * 2,
+                        height: circleSize * 2,
+                        borderRadius: '50%',
+                        border: `2px solid ${color}`,
+                        backgroundColor: `${color}33`,
+                        transform: 'scale(0)',
+                        opacity: 1,
+                        animation: 'clickRipple 0.6s ease-out forwards',
+                    }}
+                />
+            ))}
+        </>
     );
 };
 
