@@ -12,7 +12,7 @@
 }
 
 :root{
-    --body: snow;
+    --body: #FFFFFF;
     --text: #555;
 
     --header: #FFFFFF;
@@ -25,7 +25,7 @@
     --black-3: #333333;
     --black-4: #444444;
 
-    --black-t-white: #222222;
+    --black-t-white: #000000;
 
     --component: #939393;
 
@@ -48,11 +48,11 @@ body{
 }
 
 body.dark-mode{
-    --body: #222;
+    --body: #000;
     --header: #000;
 
     --text: snow;
-    --black-t-white: #ffffff;
+    --black-t-white: #FFFFFF;
 }
 
 /**/

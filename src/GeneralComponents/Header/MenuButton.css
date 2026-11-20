@@ -16,15 +16,17 @@
 .menu-button::before{
     content: 'Menú';
     transition: var(--t-200ms-linear);
-    color: var(--text);
-}
+    color: var(--black);
 
-.dark-mode .menu-button::before{
-    color: var(--white);
+    z-index: 1;
 }
 
 .menu-button:hover::before,
 .menu-button.active::before{
+    color: var(--white);
+}
+
+.dark-mode .menu-button::before{
     color: var(--white);
 }
 
@@ -46,7 +48,7 @@
     transition: var(--t-200ms-linear);
     background: var(--black-2);
     border-radius: 100%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .dark-mode .menu-button{
@@ -68,6 +70,8 @@
     aspect-ratio: 1/1;
     position: relative;
     transition: var(--t-200ms-linear);
+
+    z-index: 1;
 }
 
 .menu-button.active .menu-button-bars::before,
@@ -81,7 +85,7 @@
 .dark-mode .menu-button.active .menu-button-bars::after,
 .dark-mode .menu-button:hover .menu-button-bars::before,
 .dark-mode .menu-button:hover .menu-button-bars::after{
-    background: var(--black)
+    background: var(--white)
 }
 
 .menu-button-bars::before,
@@ -119,6 +123,13 @@
 
 .menu-button.active .menu-button-bars::after{
     rotate: -45deg;
+}
+
+.dark-mode .menu-button.active .menu-button-bars::before,
+.dark-mode .menu-button.active .menu-button-bars::after,
+.dark-mode .menu-button:hover .menu-button-bars::before,
+.dark-mode .menu-button:hover .menu-button-bars::after{
+    background: var(--black);
 }
 
 .dark-mode .menu-button-bars::before,
