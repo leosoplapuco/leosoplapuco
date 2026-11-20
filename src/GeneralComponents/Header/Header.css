@@ -3,15 +3,13 @@
 }
 
 header{
-    position: fixed;
-    left: 0;
-    top: 0;
     width: 100%;
     height: var(--header-height);
     padding: 0 20px;
     background: var(--header);
-    border-bottom: 1px solid var(--component);
+    /* border-bottom: 1px solid var(--component); */
     transition: var(--t-200ms-linear);
+
     z-index: 999;
 }
 

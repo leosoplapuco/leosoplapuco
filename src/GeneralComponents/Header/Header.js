@@ -55,12 +55,10 @@ function Header() {
 
     const toggleMenu = () => {
         if (isMenuOpen) {
-            // Cerrar todo: menú principal y vista de submenú
             setIsMenuOpen(false);
             setActiveMenuItem(null);
             setIsSubMenuViewOpen(false);
         } else {
-            // Abrir menú principal
             setIsMenuOpen(true);
             setIsSubMenuOpen(false);
         }
@@ -140,7 +138,7 @@ function Header() {
                     <p className='header-logo-text'>leosoplapuco</p>
                 </a>
 
-                <ul className='header-center'>
+                {/* <ul className='header-center'>
                     {serviciosItem && (
                         <li>
                             <button type='button' className={`hc-button hc-button-1 ${isSubMenuOpen ? 'active' : ''}`} onClick={toggleSubMenu} >
@@ -181,9 +179,9 @@ function Header() {
                             </a>
                         </li>
                     )}
-                </ul>
+                </ul> */}
 
-                <div className='header-right'>
+                {/* <div className='header-right'>
                     <nav className='menu-container'>
                         <ul className='menu'>
                             {navData.map((item) => (
@@ -203,7 +201,22 @@ function Header() {
                     >
                         <div className='menu-button-bars'></div>
                     </button>
-                </div>
+                </div> */}
+
+                <nav className='menu-container'> <ul className='menu'>
+                        {navData.map((item) => (
+                            <li key={item.id}>
+                                <a href={item['item-link']} className={`menu-link menu-link-${item.id}`}>
+                                    <h2>{item.item}</h2>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <button type='button' className={`menu-button ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                    <div className='menu-button-bars'></div>
+                </button>
 
                 <div className={`header-menu-content-container ${isMenuOpen ? 'active' : ''}`}>
                     <div className='header-menu-content'>
